@@ -9,27 +9,31 @@ public class Health : MonoBehaviour
     public float healthAmountBase;
 
     private float healthAmount;
-    private bool isDead = false;
     private int direction;
+    private isAlive scriptAlive;
     private Animator anim;
     private Transform player;
 
     private void Start()
     {
+        
         anim = GetComponent<Animator>();
         healthAmount = healthAmountBase;
         player = GameObject.Find("JotaroCollider").transform;
+        scriptAlive = GetComponentInParent<isAlive>();
     }
     private void Update()
     {
-        if (!isDead)
+        
+        if (scriptAlive.GetAlive())
         {
+            Debug.Log(scriptAlive.GetAlive());
             if (healthAmount <= 0)
             {
+                scriptAlive.SetAlive(false);
                 if (transform.parent.CompareTag("Enemy"))
                 {
-                    isDead = true;
-                    transform.parent.gameObject.GetComponent<DmgReceive>().enabled = false;
+                    GetComponentInParent<DmgReceive>().enabled = false;
                     gameObject.GetComponent<EnemyMovement>().enabled = false;
                     gameObject.GetComponent<EnemyAtk>().enabled = false;
                     anim.SetBool("isWalking", false);
@@ -42,7 +46,7 @@ public class Health : MonoBehaviour
                     {
                         direction = -1;
                     }
-                    transform.parent.GetComponent<Rigidbody>().AddForce(Vector3.right * direction * 1500f);                                      
+                    GetComponentInParent<Rigidbody>().AddForce(Vector3.right * direction * 1500f);                                      
                     anim.SetTrigger("Dead");
                 }
                 Debug.Log("Morreu");
