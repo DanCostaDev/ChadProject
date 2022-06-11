@@ -27,7 +27,6 @@ public class Health : MonoBehaviour
         
         if (scriptAlive.GetAlive())
         {
-            Debug.Log(scriptAlive.GetAlive());
             if (healthAmount <= 0)
             {
                 scriptAlive.SetAlive(false);
@@ -46,7 +45,7 @@ public class Health : MonoBehaviour
                     {
                         direction = -1;
                     }
-                    GetComponentInParent<Rigidbody>().AddForce(Vector3.right * direction * 1500f);                                      
+                    transform.parent.GetComponentInParent<Rigidbody>().AddForce(Vector3.right * direction * 1500f);                                      
                     anim.SetTrigger("Dead");
                 }
                 Debug.Log("Morreu");
