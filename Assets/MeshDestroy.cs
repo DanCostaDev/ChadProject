@@ -9,6 +9,8 @@ public class MeshDestroy : MonoBehaviour
     private Vector3 edgeVertex = Vector3.zero;
     private Vector2 edgeUV = Vector2.zero;
     private Plane edgePlane = new Plane();
+    private float timePassed;
+    private float randomNumber;
 
     public int CutCascades = 1;
     public float ExplodeForce = 0;
@@ -16,21 +18,32 @@ public class MeshDestroy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        randomNumber = UnityEngine.Random.Range(4f, 8f);
+        timePassed = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-       /* if (Input.GetMouseButtonDown(0))
+        if (CutCascades == 0)
         {
-            DestroyMesh();
-        }*/
+            if (Time.time - timePassed > randomNumber)
+            {
+                Debug.Log(Time.time - timePassed);
+                Destroy(gameObject);
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        
+        if(CutCascades == 0)
+        {
+            if (other.gameObject.tag == "PlayerCollider" | other.gameObject.tag == "EnemyCollider")
+            {
+                Physics.IgnoreCollision(other.collider, GetComponent<Collider>());
+            }
+        }
         
         if (other.relativeVelocity.x >= 10 | other.relativeVelocity.x <= -10) 
         {
