@@ -22,7 +22,7 @@ public class DmgReceive : MonoBehaviour
             {
                 Debug.Log("Ataque recebido");
                 Animator anim = this.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>();
-                if (!Object.transform.parent.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX)
+                if (!other.transform.parent.transform.parent.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX)
                 {
                     direction = 1;
                 }

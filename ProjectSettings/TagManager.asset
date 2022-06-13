@@ -8,6 +8,8 @@ TagManager:
   - Box
   - Attack
   - PlayerCollider
+  - Prop
+  - BoxFragment
   layers:
   - Default
   - TransparentFX

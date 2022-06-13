@@ -29,7 +29,6 @@ public class MeshDestroy : MonoBehaviour
         {
             if (Time.time - timePassed > randomNumber)
             {
-                Debug.Log(Time.time - timePassed);
                 Destroy(gameObject);
             }
         }
@@ -47,7 +46,6 @@ public class MeshDestroy : MonoBehaviour
         
         if (other.relativeVelocity.x >= 10 | other.relativeVelocity.x <= -10) 
         {
-            Debug.Log(other.relativeVelocity.x);
             DestroyMesh();
         }
     }
