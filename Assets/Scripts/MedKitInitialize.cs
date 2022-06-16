@@ -5,6 +5,7 @@ using UnityEngine;
 public class MedKitInitialize : MonoBehaviour
 {
     private GameObject frag;
+    public GameObject particle;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,9 @@ public class MedKitInitialize : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("PlayerCollider")){
+            GameObject part = Instantiate(particle, other.transform.GetChild(0).transform.position, other.transform.rotation);
             other.gameObject.GetComponentInChildren<Health>().Heal(4);
+
             Destroy(gameObject);
         }
     }

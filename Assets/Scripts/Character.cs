@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    private int health;
-    private int id;
-    
-    public class Properties
-    {
-        
-    }
+    public float healthBase;
+    public float staminaBase;
+    public float health { get; set; }
+    public float stamina { get; set; }
+    public int id { get; set; }
+    public bool isAlive { get; set; }
     void Start()
     {
-        
+        isAlive = true;
+        health = healthBase;
+        stamina = staminaBase;
     }
+
 }

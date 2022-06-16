@@ -221,10 +221,10 @@ TextureImporter:
       name: JotaroDeath_8
       rect:
         serializedVersion: 2
-        x: 1092
+        x: 1088
         y: 100
-        width: 139
-        height: 78
+        width: 143
+        height: 106
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,10 +261,10 @@ TextureImporter:
       name: JotaroDeath_10
       rect:
         serializedVersion: 2
-        x: 1242
+        x: 1239
         y: 98
-        width: 137
-        height: 79
+        width: 140
+        height: 106
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,10 +281,10 @@ TextureImporter:
       name: JotaroDeath_11
       rect:
         serializedVersion: 2
-        x: 1391
+        x: 1389
         y: 96
-        width: 140
-        height: 81
+        width: 142
+        height: 110
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,10 +301,10 @@ TextureImporter:
       name: JotaroDeath_12
       rect:
         serializedVersion: 2
-        x: 1542
-        y: 96
-        width: 144
-        height: 82
+        x: 1537
+        y: 97
+        width: 149
+        height: 109
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -324,7 +324,7 @@ TextureImporter:
         x: 1700
         y: 96
         width: 143
-        height: 81
+        height: 112
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

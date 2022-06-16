@@ -4,37 +4,70 @@ using UnityEngine;
 
 public class DmgReceive : MonoBehaviour
 {
-    public Transform Object;
-    private int direction = 1;
-    private isAlive scriptAlive;
+    private Animator anim;
+    private Health myScript;
+    private Character character;
+    private int attackDirection;
 
     public void Start()
     {
-        scriptAlive = GetComponent<isAlive>();
-        scriptAlive.SetAlive(true);
+        character = GetComponent<Character>();
+        myScript = gameObject.GetComponentInChildren<Health>();
+        anim = GetComponentInChildren<Animator>();
     }
-    private void OnTriggerEnter(Collider other)
+
+    private void Update()
     {
-        
-        
-        if (scriptAlive.GetAlive()) {
+        if (character.isAlive)
+        {
+            if (character.health <= 0)
+            {
+                character.isAlive = false;
+                anim.SetBool("isWalking", false);
+                if (tag == "Enemy")
+                {
+                    GetComponent<DmgReceive>().enabled = false;
+                    GetComponentInChildren<EnemyMovement>().enabled = false;
+                    GetComponentInChildren<EnemyAtk>().enabled = false;
+                    Physics.IgnoreCollision(GetComponent<Collider>(), GameObject.FindGameObjectWithTag("PlayerCollider").GetComponent<Collider>(), true);
+                }
+                if(tag == "PlayerCollider")
+                {
+
+                    GetComponent<DmgReceive>().enabled = false;
+                    GetComponentInChildren<JotaroMovement>().enabled = false;
+                    GetComponentInChildren<PlayerAttack>().enabled = false;
+                }
+                GameObject.FindGameObjectWithTag("Enemy").GetComponent<DmgReceive>().enabled = false;
+                GameObject.FindGameObjectWithTag("Enemy").GetComponentInChildren<EnemyMovement>().enabled = false;
+                GameObject.FindGameObjectWithTag("Enemy").GetComponentInChildren<EnemyAtk>().enabled = false;
+
+                GetComponent<Rigidbody>().AddForce(Vector3.right * attackDirection * 1500f);
+                anim.SetTrigger("Dead");
+
+                Debug.Log("Morreu");
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {        
+        if (character.isAlive) {
             if (other.CompareTag("Attack"))
             {
                 Debug.Log("Ataque recebido");
-                Animator anim = this.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>();
-                if (!other.transform.parent.transform.parent.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX)
+                if (!other.transform.parent.transform.parent.GetComponentInChildren<SpriteRenderer>().flipX)
                 {
-                    direction = 1;
+                    attackDirection = 1;
                 }
                 else
                 {
-                    direction = -1;
+                    attackDirection = -1;
                 }
                 anim.SetTrigger("Dmg");
-                GetComponent<Rigidbody>().AddForce(Vector3.right * direction * 1000f);
-                Health myScript = gameObject.GetComponentInChildren<Health>();
+                GetComponent<Rigidbody>().AddForce(Vector3.right * attackDirection * 1000f);
                 myScript.TakeDamage(4);
-
+                Debug.Log("Dano recebido");
 
             }
         }

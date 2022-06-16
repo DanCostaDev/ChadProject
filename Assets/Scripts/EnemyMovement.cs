@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public Transform player;
+    private GameObject player;
     public float speed;
     public float nearDistance;
 
@@ -15,14 +15,15 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        player = GameObject.Find("JotaroCentro");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.parent.position, player.position) > nearDistance && !anim.GetCurrentAnimatorStateInfo(0).IsName("DioDmg") && !anim.GetCurrentAnimatorStateInfo(0).IsName("DioAtk1"))
+        if (Vector3.Distance(transform.parent.position, player.transform.position) > nearDistance && !anim.GetCurrentAnimatorStateInfo(0).IsName("DioDmg") && !anim.GetCurrentAnimatorStateInfo(0).IsName("DioAtk1"))
         {
-            facingRight = (player.position.x < transform.parent.position.x) ? false : true;
+            facingRight = (player.transform.position.x < transform.parent.position.x) ? false : true;
             if (facingRight)
             {
                 GetComponent<SpriteRenderer>().flipX = false;
@@ -32,7 +33,7 @@ public class EnemyMovement : MonoBehaviour
                 GetComponent<SpriteRenderer>().flipX = true;
             }
             anim.SetBool("isWalking", true);
-            Vector3 movement = new Vector3(player.position.x, 0f, player.position.z);
+            Vector3 movement = new Vector3(player.transform.position.x, 0f, player.transform.position.z);
             transform.parent.position = Vector3.MoveTowards(transform.parent.position, movement, speed * Time.deltaTime);
         }
         else

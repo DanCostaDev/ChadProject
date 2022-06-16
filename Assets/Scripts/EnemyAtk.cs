@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAtk : MonoBehaviour
 {
-    public Transform player;
+    private GameObject player;
     public float nearDistance;
     Animator anim;
     private float nextAttack;
@@ -13,7 +13,7 @@ public class EnemyAtk : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-
+        player = GameObject.Find("JotaroCentro");
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class EnemyAtk : MonoBehaviour
         {
             nextAttack = Time.time + attackInterval;
         }
-            if ((Vector3.Distance(transform.parent.position, player.position) < nearDistance) & Time.time > nextAttack)
+            if ((Vector3.Distance(transform.parent.position, player.transform.position) < nearDistance) & Time.time > nextAttack)
         {
             Attack();
         }

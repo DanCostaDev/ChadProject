@@ -7,64 +7,72 @@ public class Health : MonoBehaviour
 {
     public Image healthBar;
     public float healthAmountBase;
+    public Image staminaBar;
+    public float staminaAmountBase;
+    public Image emptyStaminaBar;
 
-    private float healthAmount;
+
+    private Color baseColor;
+    private Character character;
     private int direction;
-    private isAlive scriptAlive;
     private Animator anim;
-    public GameObject player;
 
     private void Start()
     {
-        
         anim = GetComponent<Animator>();
-        healthAmount = healthAmountBase;
-        scriptAlive = GetComponentInParent<isAlive>();
+        character = gameObject.GetComponentInParent<Character>();
+        baseColor = emptyStaminaBar.color;
+
     }
     private void Update()
     {
-        
-        if (scriptAlive.GetAlive())
+        if (transform.parent.CompareTag("PlayerCollider"))
         {
-            if (healthAmount <= 0)
-            {
-                scriptAlive.SetAlive(false);
-                if (transform.parent.CompareTag("Enemy"))
-                {
-                    GetComponentInParent<DmgReceive>().enabled = false;
-                    gameObject.GetComponent<EnemyMovement>().enabled = false;
-                    gameObject.GetComponent<EnemyAtk>().enabled = false;
-                    anim.SetBool("isWalking", false);
+            character.stamina += 0.2f;
+            character.stamina = Mathf.Clamp(character.stamina, 0, character.staminaBase);
+            staminaBar.fillAmount = character.stamina / character.staminaBase;
+        }
+    }
 
-                    if (player.transform.position.x > transform.parent.position.x)
-                    {
-                        Debug.Log("Direção = 1");
-                        direction = 1;
-                    }
-                    else
-                    {
-                        Debug.Log("Direção = -1");
-                        direction = -1;
-                    }
-                    transform.parent.GetComponentInParent<Rigidbody>().AddForce(Vector3.left * direction * 1500f);                                      
-                    anim.SetTrigger("Dead");
-                }
-                Debug.Log("Morreu");
-            }
+    public void LoseStamina(float Amount)
+    {        
+        if (transform.parent.CompareTag("PlayerCollider"))
+        {
+            character.stamina -= Amount;
+            staminaBar.fillAmount = character.stamina / character.staminaBase;
         }
     }
 
     public void TakeDamage(float Damage)
     {
-        healthAmount -= Damage;
-        if (transform.parent.CompareTag("PlayerCollider")){
-            healthBar.fillAmount = healthAmount / healthAmountBase;
+        character.health -= Damage;
+        if (transform.parent.CompareTag("PlayerCollider"))
+        {
+            healthBar.fillAmount = character.health / character.healthBase;
         }       
     }
     public void Heal(float heal)
     {
-        healthAmount += heal;
-        healthAmount = Mathf.Clamp(healthAmount, 0, healthAmountBase);
-        healthBar.fillAmount = healthAmount / healthAmountBase;
+        character.health += heal;
+        character.health = Mathf.Clamp(character.health, 0, character.healthBase);
+        healthBar.fillAmount = character.health / character.healthBase;
+    }
+    public void LowStamina()
+    {
+        StaminaWhite();
+        Invoke("StaminaGray", 0.3f);
+        Invoke("StaminaWhite", 0.6f);
+        Invoke("StaminaGray", 0.9f);
+        Invoke("StaminaWhite", 1.2f);
+        Invoke("StaminaGray", 1.5f);
+
+    }
+    void StaminaWhite()
+    {
+        emptyStaminaBar.color = new Color(0.6f, 0.6f, 0.6f);
+    }
+    void StaminaGray()
+    {
+        emptyStaminaBar.color = baseColor;
     }
 }

@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: b1743660151478f4f90f913a2726f2a6
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: 12328_Statue_v1_L2
+    100002: 12328_Statue_v1_L2_cell
+    100004: 12328_Statue_v1_L2_cell.001
+    100006: 12328_Statue_v1_L2_cell.002
+    100008: 12328_Statue_v1_L2_cell.003
+    100010: 12328_Statue_v1_L2_cell.004
+    100012: 12328_Statue_v1_L2_cell.005
+    100014: 12328_Statue_v1_L2_cell.006
+    100016: 12328_Statue_v1_L2_cell.007
+    100018: 12328_Statue_v1_L2_cell.008
+    100020: 12328_Statue_v1_L2_cell.009
+    100022: 12328_Statue_v1_L2_cell.010
+    100024: 12328_Statue_v1_L2_cell.011
+    100026: 12328_Statue_v1_L2_cell.012
+    100028: 12328_Statue_v1_L2_cell.013
+    100030: 12328_Statue_v1_L2_cell.014
+    100032: 12328_Statue_v1_L2_cell.015
+    100034: //RootNode
+    100036: Camera
+    100038: Light
+    400000: 12328_Statue_v1_L2
+    400002: 12328_Statue_v1_L2_cell
+    400004: 12328_Statue_v1_L2_cell.001
+    400006: 12328_Statue_v1_L2_cell.002
+    400008: 12328_Statue_v1_L2_cell.003
+    400010: 12328_Statue_v1_L2_cell.004
+    400012: 12328_Statue_v1_L2_cell.005
+    400014: 12328_Statue_v1_L2_cell.006
+    400016: 12328_Statue_v1_L2_cell.007
+    400018: 12328_Statue_v1_L2_cell.008
+    400020: 12328_Statue_v1_L2_cell.009
+    400022: 12328_Statue_v1_L2_cell.010
+    400024: 12328_Statue_v1_L2_cell.011
+    400026: 12328_Statue_v1_L2_cell.012
+    400028: 12328_Statue_v1_L2_cell.013
+    400030: 12328_Statue_v1_L2_cell.014
+    400032: 12328_Statue_v1_L2_cell.015
+    400034: //RootNode
+    400036: Camera
+    400038: Light
+    2000000: Camera
+    2100000: 12328_Statue
+    2300000: 12328_Statue_v1_L2
+    2300002: 12328_Statue_v1_L2_cell
+    2300004: 12328_Statue_v1_L2_cell.001
+    2300006: 12328_Statue_v1_L2_cell.002
+    2300008: 12328_Statue_v1_L2_cell.003
+    2300010: 12328_Statue_v1_L2_cell.004
+    2300012: 12328_Statue_v1_L2_cell.005
+    2300014: 12328_Statue_v1_L2_cell.006
+    2300016: 12328_Statue_v1_L2_cell.007
+    2300018: 12328_Statue_v1_L2_cell.008
+    2300020: 12328_Statue_v1_L2_cell.009
+    2300022: 12328_Statue_v1_L2_cell.010
+    2300024: 12328_Statue_v1_L2_cell.011
+    2300026: 12328_Statue_v1_L2_cell.012
+    2300028: 12328_Statue_v1_L2_cell.013
+    2300030: 12328_Statue_v1_L2_cell.014
+    2300032: 12328_Statue_v1_L2_cell.015
+    3300000: 12328_Statue_v1_L2
+    3300002: 12328_Statue_v1_L2_cell
+    3300004: 12328_Statue_v1_L2_cell.001
+    3300006: 12328_Statue_v1_L2_cell.002
+    3300008: 12328_Statue_v1_L2_cell.003
+    3300010: 12328_Statue_v1_L2_cell.004
+    3300012: 12328_Statue_v1_L2_cell.005
+    3300014: 12328_Statue_v1_L2_cell.006
+    3300016: 12328_Statue_v1_L2_cell.007
+    3300018: 12328_Statue_v1_L2_cell.008
+    3300020: 12328_Statue_v1_L2_cell.009
+    3300022: 12328_Statue_v1_L2_cell.010
+    3300024: 12328_Statue_v1_L2_cell.011
+    3300026: 12328_Statue_v1_L2_cell.012
+    3300028: 12328_Statue_v1_L2_cell.013
+    3300030: 12328_Statue_v1_L2_cell.014
+    3300032: 12328_Statue_v1_L2_cell.015
+    4300000: 12328_Statue_v1_L2
+    4300002: 12328_Statue_v1_L2_cell
+    4300004: 12328_Statue_v1_L2_cell.001
+    4300006: 12328_Statue_v1_L2_cell.002
+    4300008: 12328_Statue_v1_L2_cell.003
+    4300010: 12328_Statue_v1_L2_cell.004
+    4300012: 12328_Statue_v1_L2_cell.005
+    4300014: 12328_Statue_v1_L2_cell.006
+    4300016: 12328_Statue_v1_L2_cell.007
+    4300018: 12328_Statue_v1_L2_cell.008
+    4300020: 12328_Statue_v1_L2_cell.009
+    4300022: 12328_Statue_v1_L2_cell.010
+    4300024: 12328_Statue_v1_L2_cell.011
+    4300026: 12328_Statue_v1_L2_cell.012
+    4300028: 12328_Statue_v1_L2_cell.013
+    4300030: 12328_Statue_v1_L2_cell.014
+    4300032: 12328_Statue_v1_L2_cell.015
+    10800000: Light
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
